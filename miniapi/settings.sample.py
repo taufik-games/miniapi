@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'miniapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'miniapi',
-        'USER': 'miniapi',
-        'PASSWORD': 'miniapi1212',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
     }

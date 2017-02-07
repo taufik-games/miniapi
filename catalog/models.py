@@ -26,6 +26,7 @@ class Product(base.models.Created):
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     old_price = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     url = models.URLField()
+    categories = models.ManyToManyField(Category)
 
     def __str__(self):
         return '{}'.format(self.name)

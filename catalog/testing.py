@@ -2,8 +2,10 @@
 Test on django shell
 ./manage.py shell
 """
+from haystack.query import SearchQuerySet
 from crawl.models import Page
 from catalog import parse
+from catalog.models import Product
 
 
 # from catalog.testing import *; zalando();
@@ -37,3 +39,28 @@ def provider():
         print p_page.name
         print p_page.brand
         print p_page.price
+
+
+# from catalog.testing import *; check_category();
+def check_category():
+    products = Product.objects.all()
+    for i in range(0, products.count()-1):
+        print i
+        print products[i].name
+        print products[i].provider.name
+
+        pages = SearchQuerySet().models(Page).filter(type='product_listing',
+                                                     provider=products[i].provider.name,
+                                                     body__exact=products[i].name)
+        if pages:
+            page = pages.best_match()
+        else:
+            pages = SearchQuerySet().models(Page).filter(type='product_listing',
+                                                         provider=products[i].provider.name,
+                                                         body=products[i].name)
+            if pages:
+                page = pages[0]
+
+        if pages:
+            print page.page_id
+            print page.category

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - miniapi@localhost" uuid="fa6401fc-16a4-4531-9411-41260cfddc6e">
+      <secret-storage>master_key</secret-storage>
+      <user-name>miniapi</user-name>
+      <introspection-scope>miniapi:public,pg_catalog,miniapi</introspection-scope>
+      <resolve-scope>miniapi:public,miniapi</resolve-scope>
+    </data-source>
+  </component>
+</project>

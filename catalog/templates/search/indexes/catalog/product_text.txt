@@ -1,0 +1,9 @@
+{{ object.name }}
+
+{{ object.brand.name }}
+
+{{ object.provider.name }}
+
+{% for category in object.categories.all %}
+    {{ category.name }}
+{% endfor %}

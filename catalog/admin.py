@@ -21,7 +21,10 @@ admin.site.register(models.Brand, Brand)
 
 
 class Product(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('id', 'name', 'brand', 'provider', 'old_price', 'price')
+    search_fields = ('name', )
+    list_filter = ('categories', 'provider')
+    filter_horizontal = ('categories', )
 
 admin.site.register(models.Product, Product)
 

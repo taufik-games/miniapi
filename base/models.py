@@ -5,7 +5,7 @@ from django.db import models
 
 class Created(models.Model):
     """
-    Base model by created at
+    Base model of creating timing
     """
     created_at = models.DateTimeField(auto_now_add=True)
 

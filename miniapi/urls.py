@@ -21,6 +21,7 @@ admin.site.site_header = 'Mini API administration'
 admin.site.index_title = 'Site administration'
 
 urlpatterns = [
+    url(r'^', admin.site.urls),
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/catalog/', include('catalog.api_urls')),
 ]

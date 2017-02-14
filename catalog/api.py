@@ -16,8 +16,8 @@ class Search(base.api.Api):
                 else response.filter(name__exact=self.request.query_params.get('name'))
 
         if self.request.query_params.get('brand'):
-            response = SearchQuerySet().filter(brand__exact=self.request.query_params.get('name')) if not response \
-                else response.filter(brand__exact=self.request.query_params.get('name'))
+            response = SearchQuerySet().filter(brand__exact=self.request.query_params.get('brand')) if not response \
+                else response.filter(brand__exact=self.request.query_params.get('brand'))
 
         if response:
             for result in response:

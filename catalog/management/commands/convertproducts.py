@@ -16,7 +16,7 @@ class Command(BaseCommand):
         p_listing = Page.objects.filter(type='product_detail')
 
         # Using range index of record to avoid slowly read & overload.
-        for i in range(24305, p_listing.count() - 1):
+        for i in range(0, p_listing.count() - 1):
             # Print progress
             sys.stdout.write('\r%d' % i)
             sys.stdout.flush()
